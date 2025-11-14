@@ -1,5 +1,5 @@
 // Configuration - Replace with your backend URL
-const API_URL = 'load.bstyvv.top';
+const API_URL = 'load.bstyvv.top/api/load/send';
 
 let selectedAmount = 0;
 const SERVICE_FEE_RATE = 0.05; // 5% service fee
