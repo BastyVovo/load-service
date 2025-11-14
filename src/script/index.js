@@ -36,12 +36,12 @@ function updateSummary() {
 document.getElementById('loadForm').addEventListener('submit', async function(e) {
   e.preventDefault();
 
-  const phoneNumber = document.getElementById('phoneNumber').value;
+  const mobileNumber = document.getElementById('mobileNumber').value;
   const statusDiv = document.getElementById('status');
   const submitBtn = document.getElementById('submitBtn');
 
   // Validation
-  if (!phoneNumber || phoneNumber.length !== 11) {
+  if (!mobileNumber || mobileNumber.length !== 11) {
     showStatus('error', 'Please enter a valid 11-digit mobile number');
     return;
   }
@@ -61,7 +61,7 @@ document.getElementById('loadForm').addEventListener('submit', async function(e)
       method: 'POST',
       headers: {'Content-Type': 'application/json',},
       body: JSON.stringify({
-          phoneNumber: phoneNumber,
+          mobileNumber: mobileNumber,
           amount: selectedAmount,
           timestamp: new Date().toISOString()
       })
