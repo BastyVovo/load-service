@@ -63,7 +63,6 @@ document.getElementById('loadForm').addEventListener('submit', async function(e)
       body: JSON.stringify({
           mobileNumber: mobileNumber,
           amount: selectedAmount,
-          timestamp: new Date().toISOString()
       })
     });
 
