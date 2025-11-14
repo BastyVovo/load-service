@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Load Service</title>
+    <link rel="stylesheet" href="./src/style/index.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">📱</div>
+            <h1>Load Service</h1>
+            <p class="subtitle">Quick & Easy Mobile Top-Up</p>
+            <div class="security-badge">
+                🔒 Secure Connection
+            </div>
+        </div>
+
+        <form id="loadForm">
+            <div class="form-group">
+                <label for="mobileNumber">Mobile Number</label>
+                <input type="tel" id="mobileNumber" placeholder="09123456789" required pattern="[0-9]{11}">
+                <div class="help-text">Enter 11-digit mobile number</div>
+            </div>
+
+            <div class="form-group">
+                <label>Select Amount (₱)</label>
+                <div class="amount-grid">
+                    <div class="amount-btn" data-amount="10">₱10</div>
+                    <div class="amount-btn" data-amount="15">₱15</div>
+                    <div class="amount-btn" data-amount="20">₱20</div>
+                    <div class="amount-btn" data-amount="30">₱30</div>
+                    <div class="amount-btn" data-amount="50">₱50</div>
+                    <div class="amount-btn" data-amount="100">₱100</div>
+                    <div class="amount-btn" data-amount="150">₱150</div>
+                    <div class="amount-btn" data-amount="300">₱300</div>
+                    <div class="amount-btn" data-amount="500">₱500</div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="customAmount">Or Enter Custom Amount</label>
+                <input type="number" id="customAmount" placeholder="Enter amount" min="10" max="1000">
+            </div>
+
+            <div class="summary">
+                <div class="summary-row">
+                    <span>Load Amount:</span>
+                    <span id="loadAmount">₱0</span>
+                </div>
+                <div class="summary-row">
+                    <span>Service Fee:</span>
+                    <span id="serviceFee">₱0</span>
+                </div>
+                <div class="summary-row total">
+                    <span>Total Payment:</span>
+                    <span id="totalAmount">₱0</span>
+                </div>
+            </div>
+
+            <button type="submit" class="submit-btn" id="submitBtn">
+                Process Load 🚀
+            </button>
+        </form>
+
+        <div id="status" class="status"></div>
+    </div>
+    <script src="./src/script/index.js"></script>
+</body>
+</html>
