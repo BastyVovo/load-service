@@ -46,8 +46,8 @@ document.getElementById('loadForm').addEventListener('submit', async function(e)
     return;
   }
 
-  if (selectedAmount < 10) {
-    showStatus('error', 'Please select or enter an amount (minimum ₱10)');
+  if (selectedAmount < 100) {
+    showStatus('error', 'Please select or enter an amount (minimum ₱100)');
     return;
   }
 
@@ -90,13 +90,14 @@ document.getElementById('loadForm').addEventListener('submit', async function(e)
 
 function showStatus(type, message) {
   const statusDiv = document.getElementById('status');
+  statusDiv.style.display = 'block';
   statusDiv.className = `status ${type}`;
   statusDiv.textContent = message;
 
   if (type === 'success' || type === 'error') {
-      setTimeout(() => {
-          statusDiv.style.display = 'none';
-      }, 5000);
+    setTimeout(() => {
+      statusDiv.style.display = 'none';
+    }, 5000);
   }
 }
 
