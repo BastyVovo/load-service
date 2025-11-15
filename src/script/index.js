@@ -66,10 +66,11 @@ document.getElementById('loadForm').addEventListener('submit', async function(e)
       })
     });
 
-    const result = await response.json();
+    let referenceId = "";
+    const result = await response.json().then((res) => referenceId = res.data['referenceId']);
 
     if (response.ok) {
-      showStatus('success', `Load request submitted successfully! Reference: ${result.data.referenceId || 'N/A'}`);
+      showStatus('success', `Load request submitted successfully! Reference: ${referenceId || 'N/A'}`);
       // Reset form
       setTimeout(() => {
         document.getElementById('loadForm').reset();
