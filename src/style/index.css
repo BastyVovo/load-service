@@ -6,7 +6,7 @@
 
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: #212121;
   min-height: 100vh;
   display: flex;
   justify-content: center;
@@ -15,9 +15,9 @@ body {
 }
 
 .container {
-  background: white;
+  background: #171717;
   border-radius: 20px;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 20px 60px rgba(255, 255, 255, 0.1);
   padding: 40px;
   max-width: 450px;
   width: 100%;
@@ -34,13 +34,13 @@ body {
 }
 
 h1 {
-  color: #333;
+  color: #fff;
   margin-bottom: 5px;
   font-size: 28px;
 }
 
 .subtitle {
-  color: #666;
+  color: #888;
   font-size: 14px;
 }
 
@@ -51,7 +51,7 @@ h1 {
 label {
   display: block;
   margin-bottom: 8px;
-  color: #555;
+  color: #999;
   font-weight: 600;
   font-size: 14px;
 }
@@ -59,16 +59,18 @@ label {
 input {
   width: 100%;
   padding: 12px 15px;
-  border: 2px solid #e0e0e0;
+  border: 2px solid #3a3a3a;
   border-radius: 10px;
   font-size: 16px;
   transition: border-color 0.3s;
   font-family: inherit;
+  background-color: #303030;
+  color: #fff;
 }
 
 input:focus {
   outline: none;
-  border-color: #667eea;
+  border-color: #fff;
 }
 
 .amount-grid {
@@ -80,29 +82,29 @@ input:focus {
 
 .amount-btn {
   padding: 12px;
-  background: #f8f9fa;
-  border: 2px solid #e0e0e0;
+  background: #303030;
+  border: 2px solid #3a3a3a;
   border-radius: 10px;
   cursor: pointer;
   transition: all 0.3s;
   font-weight: 600;
-  color: #333;
+  color: #999;
   text-align: center;
 }
 
 .amount-btn:hover {
-  border-color: #667eea;
-  background: #f0f3ff;
+  border-color: #fff;
+  background: #3a3a3a;
 }
 
 .amount-btn.selected {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
-  border-color: #667eea;
+  background: #fff;
+  color: #000;
+  border-color: #fff;
 }
 
 .summary {
-  background: #f8f9fa;
+  background: #303030;
   padding: 20px;
   border-radius: 10px;
   margin: 20px 0;
@@ -113,12 +115,13 @@ input:focus {
   justify-content: space-between;
   margin-bottom: 10px;
   font-size: 14px;
+  color: #999;
 }
 
 .summary-row.total {
   font-size: 18px;
   font-weight: 700;
-  color: #667eea;
+  color: #fff;
   padding-top: 10px;
   border-top: 2px solid #e0e0e0;
   margin-top: 10px;
@@ -127,8 +130,8 @@ input:focus {
 button.submit-btn {
   width: 100%;
   padding: 15px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
+  background: #fff;
+  color: #000;
   border: none;
   border-radius: 10px;
   font-size: 16px;
@@ -139,7 +142,7 @@ button.submit-btn {
 
 button.submit-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 20px rgba(102, 126, 234, 0.4);
+  box-shadow: 0 10px 20px rgba(121, 121, 121, 0.4);
 }
 
 button.submit-btn:active {

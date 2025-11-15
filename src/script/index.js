@@ -24,7 +24,8 @@ document.getElementById('customAmount').addEventListener('input', function() {
 
 // Update summary
 function updateSummary() {
-  const serviceFee = Math.round(selectedAmount * SERVICE_FEE_RATE);
+  // const serviceFee = Math.round(selectedAmount * SERVICE_FEE_RATE);
+  const serviceFee = 0;
   const total = selectedAmount + serviceFee;
 
   document.getElementById('loadAmount').textContent = `₱${selectedAmount}`;
@@ -61,8 +62,8 @@ document.getElementById('loadForm').addEventListener('submit', async function(e)
       method: 'POST',
       headers: {'Content-Type': 'application/json',},
       body: JSON.stringify({
-          mobileNumber: mobileNumber,
-          amount: selectedAmount,
+        mobileNumber: mobileNumber,
+        amount: selectedAmount,
       })
     });
 
