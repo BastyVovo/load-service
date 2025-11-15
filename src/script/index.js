@@ -1,4 +1,3 @@
-// Configuration - Replace with your backend URL
 const API_URL = 'https://load.bstyvv.top/api/load/send';
 
 let selectedAmount = 0;
@@ -70,14 +69,14 @@ document.getElementById('loadForm').addEventListener('submit', async function(e)
     const result = await response.json();
 
     if (response.ok) {
-      showStatus('success', `✅ Load request submitted successfully! Reference: ${result.referenceId || 'N/A'}`);
+      showStatus('success', `Load request submitted successfully! Reference: ${result['referenceId'] || 'N/A'}`);
       // Reset form
       setTimeout(() => {
         document.getElementById('loadForm').reset();
         document.querySelectorAll('.amount-btn').forEach(b => b.classList.remove('selected'));
         selectedAmount = 0;
         updateSummary();
-      }, 2000);
+      }, 500);
     } else {
       showStatus('error', result.message || 'Failed to process request. Please try again.');
     }
