@@ -46,8 +46,8 @@ document.getElementById('loadForm').addEventListener('submit', async function(e)
     return;
   }
 
-  if (selectedAmount < 100) {
-    showStatus('error', 'Please select or enter an amount (minimum ₱100)');
+  if (selectedAmount < 100 || selectedAmount > 1000) {
+    showStatus('error', 'Please select or enter an amount (minimum ₱100 and maximum ₱1000');
     return;
   }
 
