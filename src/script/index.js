@@ -67,9 +67,8 @@ document.getElementById('loadForm').addEventListener('submit', async function(e)
     });
 
     let referenceId = "";
-    const result = await response.json().then((res) => referenceId = res.data['referenceId']);
-
     if (response.ok) {
+      await response.json().then((res) => referenceId = res.data['referenceId']);
       showStatus('success', `Load request submitted successfully! Reference: ${referenceId || 'N/A'}`);
       // Reset form
       setTimeout(() => {
@@ -79,7 +78,7 @@ document.getElementById('loadForm').addEventListener('submit', async function(e)
         updateSummary();
       }, 500);
     } else {
-      showStatus('error', result.message || 'Failed to process request. Please try again.');
+      showStatus('error', response.message || 'Failed to process request. Please try again.');
     }
   } catch (error) {
     console.error('Error:', error);
