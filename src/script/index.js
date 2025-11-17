@@ -37,11 +37,11 @@ document.getElementById('loadForm').addEventListener('submit', async function(e)
   e.preventDefault();
 
   const mobileNumber = document.getElementById('mobileNumber').value;
-  const statusDiv = document.getElementById('status');
   const submitBtn = document.getElementById('submitBtn');
 
+  const number = mobileNumber?.replace(/\D/g, '');
   // Validation
-  if (!mobileNumber || mobileNumber.length !== 11) {
+  if (!number || number.length !== 11) {
     showStatus('error', 'Please enter a valid 11-digit mobile number');
     return;
   }
@@ -61,7 +61,7 @@ document.getElementById('loadForm').addEventListener('submit', async function(e)
       method: 'POST',
       headers: {'Content-Type': 'application/json',},
       body: JSON.stringify({
-        mobileNumber: mobileNumber,
+        mobileNumber: number,
         amount: selectedAmount,
       })
     });
