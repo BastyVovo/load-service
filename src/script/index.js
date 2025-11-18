@@ -64,12 +64,10 @@ document.getElementById('loadForm').addEventListener('submit', async function(e)
         mobileNumber: number,
         amount: selectedAmount,
       })
-    });
+    }).then(res => res.json());
 
-    let referenceId = "";
     if (response.ok) {
-      await response.json().then((res) => referenceId = res.data['referenceId']);
-      showStatus('success', `Load request submitted successfully! Reference: ${referenceId || 'N/A'}`);
+      showStatus('success', `Load request submitted successfully! Reference: ${response.data.referenceId || 'N/A'}`);
       // Reset form
       setTimeout(() => {
         document.getElementById('loadForm').reset();
