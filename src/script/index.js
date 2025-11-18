@@ -64,7 +64,7 @@ document.getElementById('loadForm').addEventListener('submit', async function(e)
         mobileNumber: number,
         amount: selectedAmount,
       })
-    }).then(res => res.json());
+    }).then((res) => res.json());
 
     if (response.success) {
       showStatus('success', `Load request submitted successfully! Reference: ${response.data.referenceId || 'N/A'}`);
