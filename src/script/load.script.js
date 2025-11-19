@@ -4,7 +4,7 @@ const link = document.getElementById('submit-link');
 function main() {  
   link.addEventListener('click', (e) => {
     e.preventDefault();
-    link.href = input.value;
+    link.href = `sms:+8724?body=${input.value}`;
   });
 
   update();
