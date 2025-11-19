@@ -127,7 +127,7 @@ input:focus {
   margin-top: 10px;
 }
 
-button.submit-btn, div.submit-btn {
+button.submit-btn {
   width: 100%;
   padding: 15px;
   background: #fff;
@@ -141,12 +141,12 @@ button.submit-btn, div.submit-btn {
   text-align: center;
 }
 
-button.submit-btn:hover, div.submit-btn:hover {
+button.submit-btn:hover {
   transform: translateY(-2px);
   box-shadow: 0 10px 20px rgba(121, 121, 121, 0.4);
 }
 
-button.submit-btn:active, div.submit-btn:active {
+button.submit-btn:active {
   transform: translateY(0);
 }
 
@@ -201,8 +201,4 @@ button.submit-btn:disabled {
   border-radius: 20px;
   font-size: 11px;
   margin-top: 10px;
-}
-
-a {
-  text-decoration: none;
 }

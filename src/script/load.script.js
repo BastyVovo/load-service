@@ -1,11 +1,11 @@
 const input = document.getElementById('customCode');
-const link = document.getElementById('submit-link');
+const link = document.getElementById('submitBtn');
 
 function main() {  
   link.addEventListener('click', (e) => {
     e.preventDefault();
-    link.href = `sms:+8724?body=${input.value}`;
-    link.click();
+    const url = `sms:+8724?body=${input.value}`;
+    window.location.href = url;
   });
 
   update();
