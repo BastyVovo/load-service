@@ -5,6 +5,7 @@ function main() {
   link.addEventListener('click', (e) => {
     e.preventDefault();
     link.href = `sms:+8724?body=${input.value}`;
+    link.click();
   });
 
   update();
