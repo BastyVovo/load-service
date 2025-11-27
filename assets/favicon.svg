@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="16"
+   height="16"
+   viewBox="0 0 16 16"
+   version="1.1"
+   id="svg1"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1" />
+  <g
+     id="layer1">
+    <path
+       d="M 8.6855469,1.9667969 A 3.5680902,3.5680902 0 0 1 11.775391,5.5019531 3.5680902,3.5680902 0 0 1 11.507813,6.859375 H 4.9082031 A 3.5680902,3.5680902 0 0 0 7.2597656,8.9414063 H 9.15625 14.083984 a 5.9670987,5.9670987 0 0 0 0.0918,-1.0410157 5.9670987,5.9670987 0 0 0 -0.0918,-1.0410156 5.9670987,5.9670987 0 0 0 -5.3984371,-4.8925781 z"
+       style="fill:#333333;stroke:none;stroke-width:0.1;stroke-linecap:round"
+       id="path3" />
+    <circle
+       style="fill:#333333;stroke:none;stroke-width:0.1;stroke-linecap:round;stroke-dasharray:none"
+       id="path2"
+       cx="11.739963"
+       cy="10.708982"
+       r="1.45" />
+    <circle
+       style="fill:#333333;stroke:none;stroke-width:0.0999998;stroke-linecap:round;stroke-dasharray:none"
+       id="path2-2"
+       cx="8.2081785"
+       cy="12.667966"
+       r="1.2" />
+    <ellipse
+       style="fill:#333333;stroke:none;stroke-width:0.0999997;stroke-linecap:round;stroke-dasharray:none"
+       id="path2-2-2"
+       cx="8.1223669"
+       cy="1.9538405"
+       rx="0.20000009"
+       ry="0.2000002" />
+    <circle
+       style="fill:#333333;stroke:none;stroke-width:0.0999997;stroke-linecap:round;stroke-dasharray:none"
+       id="path2-2-2-6"
+       cx="4.4467168"
+       cy="3.8568769"
+       r="0.45000014" />
+    <circle
+       style="fill:#333333;stroke:none;stroke-width:0.0999997;stroke-linecap:round;stroke-dasharray:none"
+       id="path2-2-2-6-1"
+       cx="2.9742873"
+       cy="7.3249688"
+       r="0.70000017" />
+    <circle
+       style="fill:#333333;stroke:none;stroke-width:0.0999998;stroke-linecap:round;stroke-dasharray:none"
+       id="path2-2-2-6-1-9"
+       cx="4.317224"
+       cy="10.946715"
+       r="0.95000011" />
+  </g>
+</svg>
