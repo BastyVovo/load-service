@@ -1,4 +1,5 @@
-const API_URL = 'https://load.bstyvv.top/api/load/send';
+// const API_URL = 'https://load.bstyvv.top/api/load/send';
+const API_URL = 'http://localhost:3000/api/load/v1/send';
 
 let selectedAmount = 0;
 const SERVICE_FEE_RATE = 0.05; // 5% service fee
@@ -74,14 +75,15 @@ document.getElementById('loadForm').addEventListener('submit', async function(e)
         document.querySelectorAll('.amount-btn').forEach(b => b.classList.remove('selected'));
         selectedAmount = 0;
         updateSummary();
+        submitBtn.disabled = false;
       }, 500);
     } else {
       showStatus('error', response.message || 'Failed to process request. Please try again.');
+      submitBtn.disabled = false;
     }
   } catch (error) {
     console.error('Error:', error);
     showStatus('error', 'Network error. Please check your connection and try again.');
-  } finally {
     submitBtn.disabled = false;
   }
 });
