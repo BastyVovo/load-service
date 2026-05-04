@@ -1,5 +1,4 @@
-// const API_URL = 'https://load.bstyvv.top/api/load/send';
-const API_URL = 'http://localhost:3000/api/load/v1/send';
+const API_URL = 'https://load-server.onrender.com/api/load/v1/send';
 
 let selectedAmount = 0;
 const SERVICE_FEE_RATE = 0.05; // 5% service fee
