@@ -1,8 +1,12 @@
 const API_URL = "https://load-server.onrender.com/api/load/v1/send";
 
 let selectedAmount = 0;
-const SERVICE_FEE_RATE = 0.05; // 5% service fee
+const SERVICE_FEE_RATE = 0.02; // 5% service fee
 
+document.getElementById("toggle").addEventListener("change", function () {
+  console.log(this.checked);
+  updateSummary();
+});
 // Amount button selection
 document.querySelectorAll(".amount-btn").forEach((btn) => {
   btn.addEventListener("click", function () {
@@ -27,13 +31,25 @@ document.getElementById("customAmount").addEventListener("input", function () {
 
 // Update summary
 function updateSummary() {
-  // const serviceFee = Math.round(selectedAmount * SERVICE_FEE_RATE);
-  const serviceFee = 0;
+  const isChecked = document.getElementById("toggle").checked;
+  const serviceFee = isChecked
+    ? 0
+    : Math.round(selectedAmount * SERVICE_FEE_RATE);
   const total = selectedAmount + serviceFee;
 
   document.getElementById("loadAmount").textContent = `₱${selectedAmount}`;
   document.getElementById("serviceFee").textContent = `₱${serviceFee}`;
   document.getElementById("totalAmount").textContent = `₱${total}`;
+}
+
+// Update Service Fee
+function updateFee() {
+  const isChecked = document.getElementById("toggle").checked;
+  const serviceFee = isChecked
+    ? 0
+    : Math.round(selectedAmount * SERVICE_FEE_RATE);
+
+  return selectedAmount + serviceFee;
 }
 
 // Form submission
@@ -60,6 +76,7 @@ document
       return;
     }
 
+    const total = updateFee();
     // Show processing status
     showStatus("processing", "Processing your request...");
     submitBtn.disabled = true;
@@ -71,7 +88,7 @@ document
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           mobileNumber: number,
-          amount: selectedAmount,
+          amount: total,
         }),
       }).then((res) => res.json());
 
