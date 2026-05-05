@@ -4,7 +4,6 @@ let selectedAmount = 0;
 const SERVICE_FEE_RATE = 0.02; // 5% service fee
 
 document.getElementById("toggle").addEventListener("change", function () {
-  console.log(this.checked);
   updateSummary();
 });
 // Amount button selection
@@ -42,16 +41,6 @@ function updateSummary() {
   document.getElementById("totalAmount").textContent = `₱${total}`;
 }
 
-// Update Service Fee
-function updateFee() {
-  const isChecked = document.getElementById("toggle").checked;
-  const serviceFee = isChecked
-    ? 0
-    : Math.round(selectedAmount * SERVICE_FEE_RATE);
-
-  return selectedAmount + serviceFee;
-}
-
 // Form submission
 document
   .getElementById("loadForm")
@@ -76,7 +65,7 @@ document
       return;
     }
 
-    const total = updateFee();
+    const isChecked = document.getElementById("toggle").checked;
     // Show processing status
     showStatus("processing", "Processing your request...");
     submitBtn.disabled = true;
@@ -88,7 +77,8 @@ document
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           mobileNumber: number,
-          amount: total,
+          amount: selectedAmount,
+          isReseller: isChecked,
         }),
       }).then((res) => res.json());
 
