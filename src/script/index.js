@@ -69,6 +69,7 @@ document
     // Show processing status
     showStatus("processing", "Processing your request...");
     submitBtn.disabled = true;
+    showLoading(true);
 
     try {
       // Send request to backend
@@ -103,6 +104,7 @@ document
           response.message || "Failed to process request. Please try again.",
         );
         submitBtn.disabled = false;
+        showLoading(false);
       }
     } catch (error) {
       console.error("Error:", error);
@@ -111,8 +113,19 @@ document
         "Network error. Please check your connection and try again.",
       );
       submitBtn.disabled = false;
+      showLoading(false);
     }
   });
+
+function showLoading(show) {
+  if(show) {
+    document.querySelector("#submitBtn .text").style.display = "none";
+    document.querySelector("#submitBtn .loader").style.display = "inline";
+  } else {
+    document.querySelector("#submitBtn .text").style.display = "inline";
+    document.querySelector("#submitBtn .loader").style.display = "none";
+  }
+}
 
 function showStatus(type, message) {
   const statusDiv = document.getElementById("status");
