@@ -97,6 +97,7 @@ document
           selectedAmount = 0;
           updateSummary();
           submitBtn.disabled = false;
+          showLoading(false);
         }, 500);
       } else {
         showStatus(
