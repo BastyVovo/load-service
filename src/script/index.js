@@ -145,7 +145,7 @@ function showStatus(type, message) {
 // Initialize
 updateSummary();
 
-window.onload = () => {
+window.onload = async () => {
   await fetch(`${renderBase}/app/ping`);
   console.log("Server awakened");
 };
