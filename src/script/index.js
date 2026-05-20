@@ -1,4 +1,5 @@
-const API_URL = "https://load-server.onrender.com/api/load/v1/send";
+const renderBase = "https://load-server.onrender.com/api";
+const API_URL = `${renderBase}/load/v1/send`;
 
 let selectedAmount = 0;
 const SERVICE_FEE_RATE = 0.02; // 5% service fee
@@ -143,3 +144,7 @@ function showStatus(type, message) {
 
 // Initialize
 updateSummary();
+
+window.onload = () => {
+  fetch(`${renderBase}/app/ping`);
+};
