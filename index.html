@@ -8,6 +8,11 @@
     <link rel="stylesheet" href="./src/style/index.css" />
   </head>
   <body>
+    <div id="startupLoader" class="startup-loader">
+      <div class="spinner"></div>
+      <p>Initializing service...</p>
+    </div>
+
     <div class="container">
       <div class="header">
         <h1>Load Service</h1>
@@ -62,7 +67,7 @@
 
         <button type="submit" class="submit-btn" id="submitBtn">
           <span class="text">Process Load</span>
-          <span class="loader" style="display: none;"></span>
+          <span class="loader" style="display: none"></span>
         </button>
       </form>
 

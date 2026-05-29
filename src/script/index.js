@@ -120,7 +120,7 @@ document
   });
 
 function showLoading(show) {
-  if(show) {
+  if (show) {
     document.querySelector("#submitBtn .text").style.display = "none";
     document.querySelector("#submitBtn .loader").style.display = "inline";
   } else {
@@ -145,7 +145,13 @@ function showStatus(type, message) {
 // Initialize
 updateSummary();
 
-window.onload = async () => {
-  await fetch(`${renderBase}/app/ping`);
-  console.log("Server awakened");
-};
+window.addEventListener("load", async () => {
+  try {
+    await fetch(`${renderBase}/app/ping`);
+    console.log("Server awakened");
+  } catch (err) {
+    console.error("Failed to wake server", err);
+  } finally {
+    document.getElementById("startupLoader").style.display = "none";
+  }
+});
